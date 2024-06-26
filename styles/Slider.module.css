@@ -1,0 +1,32 @@
+.sliderContainer {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Center the slider and add some margin on top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  .sliderImage {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sliderImage img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .sliderImage.active {
+    opacity: 1;
+  }
+  

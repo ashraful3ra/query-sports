@@ -1,0 +1,62 @@
+.channelList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 10px; /* Space for scrollbar */
+}
+
+.channelItem {
+  /*flex: 0 1 calc(20% - 20px); /* Five items per row with margins */
+  max-width: calc(20% - 20px);
+  background-color: #3C4147;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.channelItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.channelLogo {
+  width: 100%;
+  height: auto;
+  max-width: 202px;
+  max-height: 276px;
+  margin-bottom: 10px;
+}
+
+.channelTitle {
+  font-size: 1em;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .channelItem {
+    flex: 0 1 calc(50% - 10px); /* Two items per row on smaller screens */
+    max-width: calc(38% - 16px);
+  }
+
+  .channelLogo {
+    width: 102px;
+    height: 142px;
+    max-width: 162px;
+    max-height: 221px;
+  }
+
+  .channelTitle {
+    font-size: 0.9em;
+  }
+}

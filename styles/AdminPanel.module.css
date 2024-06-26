@@ -1,0 +1,105 @@
+.adminContainer {
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for better readability */
+  color: #333; /* Dark text color for contrast */
+  font-family: Arial, sans-serif; /* Clean font */
+}
+
+.formSection {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #ffffff; /* White background for form sections */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.formSection h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #007bff; /* Blue color for headings */
+}
+
+.input {
+  display: block;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus effect */
+}
+
+.button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.sectionList {
+  margin-top: 20px;
+}
+
+.sectionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffffff; /* White background for section items */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.sectionItem h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333; /* Dark color for section titles */
+}
+
+.sectionItem img {
+  max-width: 100px;
+  max-height: 50px;
+  margin-right: 20px;
+  border-radius: 4px; /* Rounded corners for images */
+}
+
+.channelItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.channelImage {
+  max-width: 100px;
+  max-height: 50px;
+  margin-right: 20px;
+  border-radius: 4px; /* Rounded corners for images */
+}
+
+.sliderImage {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 20px;
+  border-radius: 4px; /* Rounded corners for images */
+}
