@@ -18,8 +18,12 @@ const AdminPanel = () => {
 
   useEffect(() => {
     const unsubscribeSections = onSnapshot(collection(db, 'sections'), snapshot => {
-      const sectionsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setSections(sectionsData);
+      const sectionsData = snapshot.docs.map(async (doc) => {
+        const channelsSnapshot = await getDocs(collection(db, 'sections', doc.id, 'channels'));
+        const channels = channelsSnapshot.docs.map(channelDoc => ({ id: channelDoc.id, ...channelDoc.data() }));
+        return { id: doc.id, ...doc.data(), channels };
+      });
+      Promise.all(sectionsData).then(setSections);
     });
 
     const unsubscribeSlider = onSnapshot(collection(db, 'slider'), snapshot => {
@@ -216,9 +220,10 @@ const AdminPanel = () => {
               <button onClick={() => startEditingSection(section)} className={styles.button}>Edit</button>
               <button onClick={() => deleteSection(section.id)} className={styles.button}>Delete</button>
               <ul>
-                {section.channels?.map(channel => (
+                {section.channels.map(channel => (
                   <li key={channel.id} className={styles.channelItem}>
                     <img src={channel.logo} alt="Channel" className={styles.channelImage} />
+                    <span>{channel.name}</span>
                     <button onClick={() => startEditingChannel(section.id, channel)} className={styles.button}>Edit</button>
                     <button onClick={() => deleteChannel(section.id, channel.id, channel.logo)} className={styles.button}>Delete</button>
                   </li>
